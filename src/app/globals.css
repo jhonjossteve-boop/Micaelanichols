@@ -1,0 +1,85 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --cream:#faf8f5;
+  --white:#ffffff;
+  --offwhite:#f5f2ee;
+  --teal:#2a8c7a;
+  --teal-light:#3aada0;
+  --teal-dark:#1a6b5c;
+  --teal-pale:#e8f4f2;
+  --navy:#1c2b3a;
+  --navy-mid:#2d4057;
+  --slate:#4a6274;
+  --muted:#7a8c96;
+  --border:#ddd8d0;
+  --gold:#c9a96e;
+  --gold-light:#e8d5aa;
+  --warm-gray:#9a9087;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--navy);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+
+@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+.sec-label{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px}
+.sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.5vw,48px);font-weight:300;line-height:1.15;color:var(--navy)}
+.divider{width:44px;height:2px;background:var(--gold);margin:20px 0}
+
+.btn-primary{background:var(--teal);color:#fff;border:none;padding:14px 32px;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;display:inline-block;text-decoration:none;font-family:inherit}
+.btn-primary:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,140,122,.28)}
+.btn-outline{background:transparent;color:var(--navy);border:1px solid var(--navy);padding:13px 32px;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;display:inline-block;text-decoration:none;font-family:inherit}
+.btn-outline:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+
+.card{background:var(--white);border-radius:2px;border:1px solid var(--border);padding:28px;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.07)}
+
+.tag{font-size:11px;font-weight:500;padding:5px 13px;border-radius:2px;border:1px solid var(--border);color:var(--slate);background:var(--cream);cursor:default;transition:all .2s;display:inline-block}
+.tag:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-pale)}
+
+.dot{width:8px;height:8px;border-radius:4px;background:var(--border);border:none;cursor:pointer;padding:0;transition:all .3s}
+.dot.active{width:24px;background:var(--teal)}
+
+.nav-link{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--slate);transition:color .2s;text-decoration:none}
+.nav-link:hover{color:var(--teal)}
+
+.footer-link{display:block;font-size:12px;color:rgba(255,255,255,.45);margin-bottom:9px;text-decoration:none;transition:color .2s}
+.footer-link:hover{color:#fff}
+
+.form-input{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:2px;font-size:13px;color:var(--navy);background:var(--cream);outline:none;transition:border-color .2s;font-family:inherit}
+.form-input:focus{border-color:var(--teal)}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--offwhite)}
+::-webkit-scrollbar-thumb{background:var(--teal-light);border-radius:3px}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr!important}
+  .hero-portrait{display:none!important}
+  .two-col{grid-template-columns:1fr!important;gap:48px!important}
+  .three-col{grid-template-columns:1fr 1fr!important}
+  .exp-label-col{display:none!important}
+  .exp-item-grid{grid-template-columns:1fr!important}
+  .nav-links{display:none!important}
+  .footer-grid{grid-template-columns:1fr!important;gap:32px!important}
+}
+@media(max-width:600px){
+  .three-col{grid-template-columns:1fr!important}
+  .two-col-sm{grid-template-columns:1fr!important}
+  .hero-stats{gap:24px!important}
+  .cta-buttons{flex-direction:column!important}
+}
